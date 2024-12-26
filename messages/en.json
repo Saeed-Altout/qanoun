@@ -76,5 +76,40 @@
         "lawyers": "Lawyers",
         "firms": "Law Firms",
         "blog": "Blog"
+    },
+    "Lawyers": {
+        "title": "Find Lawyers",
+        "years": "years",
+        "reviews": "reviews",
+        "viewProfile": "View Profile",
+        "sortBy": {
+            "rating": "Sort by Rating",
+            "experience": "Sort by Experience",
+            "reviews": "Sort by Reviews"
+        },
+        "filters": {
+            "search": "Search",
+            "searchPlaceholder": "Search by name or specialty",
+            "specialties": {
+                "title": "Specialties",
+                "corporate": "Corporate Law",
+                "criminal": "Criminal Law",
+                "family": "Family Law",
+                "realEstate": "Real Estate Law",
+                "intellectual": "Intellectual Property",
+                "labor": "Labor Law"
+            },
+            "experience": {
+                "title": "Experience",
+                "0-2": "0-2 years",
+                "3-5": "3-5 years",
+                "6-10": "6-10 years",
+                "10+": "10+ years"
+            },
+            "apply": "Apply Filters",
+            "loading": "Applying filters...",
+            "apply": "Apply Filters"
+        },
+        "noResults": "No lawyers found matching your criteria"
     }
 }
