@@ -207,6 +207,59 @@
                 "pending": "Pending",
                 "completed": "Completed"
             }
+        },
+        "documents": {
+            "title": "Documents",
+            "subtitle": "Manage your legal documents",
+            "upload": "Upload Document",
+            "uploadDocument": "Upload New Document",
+            "table": {
+                "name": "Document Name",
+                "type": "Type",
+                "size": "Size",
+                "lastModified": "Last Modified",
+                "actions": "Actions"
+            },
+            "types": {
+                "contract": "Contract",
+                "report": "Report",
+                "legal": "Legal Document",
+                "other": "Other"
+            },
+            "actions": {
+                "download": "Download",
+                "share": "Share",
+                "delete": "Delete"
+            },
+            "filters": {
+                "search": "Search documents...",
+                "type": "Filter by Type",
+                "allTypes": "All Types"
+            },
+            "form": {
+                "file": "File",
+                "name": "Document Name",
+                "type": "Document Type",
+                "selectType": "Select a type",
+                "cancel": "Cancel",
+                "upload": "Upload"
+            },
+            "noDocuments": "No documents found 📄",
+            "uploadYourFirstDocument": "Upload your first document to get started",
+            "noSearchResults": "No matching documents found 🔍",
+            "tryAdjustingFilters": "Try adjusting your filters or search terms",
+            "uploading": "Uploading...",
+            "uploadSuccess": {
+                "title": "Document Uploaded",
+                "description": "Your document has been successfully uploaded."
+            },
+            "fileError": {
+                "title": "Upload Error",
+                "tooLarge": "File size must be less than 5MB",
+                "storageLimit": "Storage limit reached (100MB). Please delete some files first."
+            },
+            "storageUsed": "Storage Used",
+            "storageLimit": "Storage Limit"
         }
     }
 }
