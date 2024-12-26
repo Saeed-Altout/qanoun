@@ -1,13 +1,16 @@
 {
     "HomePage": {
-        "title": "Hello world!",
-        "about": "Go to the about page"
+        "title": "Legal Consultation Online",
+        "subtitle": "24/7 Legal Consultations",
+        "description": "Get professional legal consultation from the comfort of your home through our platform. Connect with experienced lawyers and find the answers you need for your legal matters. Simple, fast, and reliable.",
+        "lawyerRegister": "Register as Lawyer",
+        "clientRegister": "Client Registration"
     },
     "Navbar": {
         "title": "Qanoon",
         "home": "Home",
-        "about": "About",
-        "login": "Login",
-        "register": "Register"
+        "lawyers": "Lawyers",
+        "firms": "Law Firms",
+        "blog": "Blog"
     }
 }
