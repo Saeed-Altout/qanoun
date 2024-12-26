@@ -9,11 +9,15 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@formatjs/intl-localematcher": "^0.5.9",
     "@radix-ui/react-slot": "^1.1.1",
+    "@types/negotiator": "^0.6.3",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "lucide-react": "^0.469.0",
+    "negotiator": "^1.0.0",
     "next": "15.1.2",
+    "next-intl": "^3.26.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "tailwind-merge": "^2.6.0",
