@@ -2,9 +2,11 @@
     "HomePage": {
         "title": "Legal Consultation Online",
         "subtitle": "24/7 Legal Consultations",
-        "description": "Get professional legal consultation from the comfort of your home through our platform. Connect with experienced lawyers and find the answers you need for your legal matters. Simple, fast, and reliable.",
+        "description": "Get professional legal consultation from the comfort of your home through our platform. Connect with experienced lawyers and find the answers you need for your legal matters. Convenient and confidential, just one click away.",
         "lawyerRegister": "Register as Lawyer",
-        "clientRegister": "Client Registration"
+        "browseButton": "Browse Lawyers",
+        "categoriesTitle": "Categories",
+        "categoriesDescription": "Diverse groups of law branches or fields that encompass various areas of legal practice. These classifications help organize and categorize different aspects of the legal system and provide a framework for legal professionals to specialize in specific areas. Each legal classification deals with specific types of legal issues, laws, and regulations."
     },
     "Navbar": {
         "title": "Qanoon",
