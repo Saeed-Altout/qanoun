@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { useTranslations } from "next-intl";
 import {
   Dialog,
@@ -47,17 +47,73 @@ export function UploadDocumentModal() {
     type: "contract",
   });
 
+  const resetForm = useCallback(() => {
+    setFormData({ file: null, name: "", type: "contract" });
+    setProgress(0);
+    setUploading(false);
+  }, []);
+
+  const handleComplete = useCallback(() => {
+    if (!formData.file) return;
+
+    addDocument({
+      name: formData.name,
+      type: formData.type,
+      size: `${(formData.file.size / (1024 * 1024)).toFixed(1)} MB`,
+      lastModified: new Date().toISOString().split("T")[0],
+      status: "active",
+    });
+
+    toast({
+      title: t("uploadSuccess.title"),
+      description: t("uploadSuccess.description"),
+    });
+
+    setOpen(false);
+    resetForm();
+  }, [formData, addDocument, t, toast, setOpen, resetForm]);
+
+  useEffect(() => {
+    if (!uploading) return;
+
+    const interval = setInterval(() => {
+      setProgress((prev) => {
+        if (prev >= 100) {
+          clearInterval(interval);
+          handleComplete();
+          return 100;
+        }
+        return prev + 10;
+      });
+    }, 500);
+
+    return () => clearInterval(interval);
+  }, [uploading, handleComplete]);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!formData.file || !formData.name || !formData.type) return;
+    setProgress(0);
+    setUploading(true);
+  };
+
+  const handleOpenChange = (newOpen: boolean) => {
+    if (!newOpen) {
+      resetForm();
+    }
+    setOpen(newOpen);
+  };
+
   // Calculate total storage used
   const totalStorageUsed = documents.reduce((acc, doc) => {
     const sizeInMB = parseFloat(doc.size.replace(" MB", ""));
-    return acc + sizeInMB * 1024 * 1024; // Convert MB to bytes
+    return acc + sizeInMB * 1024 * 1024;
   }, 0);
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files && e.target.files[0]) {
       const file = e.target.files[0];
 
-      // Check file size
       if (file.size > MAX_FILE_SIZE) {
         toast({
           title: t("fileError.title"),
@@ -68,7 +124,6 @@ export function UploadDocumentModal() {
         return;
       }
 
-      // Check storage limit
       if (totalStorageUsed + file.size > STORAGE_LIMIT) {
         toast({
           title: t("fileError.title"),
@@ -87,56 +142,8 @@ export function UploadDocumentModal() {
     }
   };
 
-  const simulateUpload = () => {
-    setUploading(true);
-    setProgress(0);
-
-    const interval = setInterval(() => {
-      setProgress((prev) => {
-        if (prev >= 100) {
-          clearInterval(interval);
-          setUploading(false);
-          handleUploadSuccess();
-          return 100;
-        }
-        return prev + 10;
-      });
-    }, 500);
-  };
-
-  const handleUploadSuccess = () => {
-    if (!formData.file) return;
-
-    // Use setTimeout to avoid the state update during render
-    setTimeout(() => {
-      addDocument({
-        name: formData.name,
-        type: formData.type,
-        size: `${(formData.file!.size / (1024 * 1024)).toFixed(1)} MB`,
-        lastModified: new Date().toISOString().split("T")[0],
-        status: "active",
-      });
-
-      toast({
-        title: t("uploadSuccess.title"),
-        description: t("uploadSuccess.description"),
-      });
-
-      setOpen(false);
-      setFormData({ file: null, name: "", type: "contract" });
-    }, 0);
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!formData.file || !formData.name || !formData.type) return;
-
-    // Simulate file upload
-    simulateUpload();
-  };
-
   return (
-    <Dialog open={open} onOpenChange={setOpen}>
+    <Dialog open={open} onOpenChange={handleOpenChange}>
       <DialogTrigger asChild>
         <Button className="bg-[#B4975A] hover:bg-[#9A7F4A]">
           <Upload className="h-5 w-5 mr-2" />

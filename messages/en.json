@@ -259,7 +259,19 @@
                 "storageLimit": "Storage limit reached (100MB). Please delete some files first."
             },
             "storageUsed": "Storage Used",
-            "storageLimit": "Storage Limit"
+            "storageLimit": "Storage Limit",
+            "share": {
+                "title": "Share Document",
+                "link": "Share Link",
+                "or": "or",
+                "email": "Email Address",
+                "emailPlaceholder": "Enter recipient's email",
+                "send": "Send Invitation",
+                "success": {
+                    "title": "Shared Successfully",
+                    "description": "An invitation has been sent to the recipient."
+                }
+            }
         }
     }
 }

@@ -30,6 +30,7 @@ import {
 } from "@/components/ui/select";
 import { useDocuments } from "@/contexts/document-context";
 import { Progress } from "@/components/ui/progress";
+import { ShareDocumentDialog } from "@/components/dashboard/share-document-dialog";
 
 export function DocumentList() {
   const t = useTranslations("Dashboard.documents");
@@ -179,9 +180,16 @@ export function DocumentList() {
                             <Download className="h-4 w-4 mr-2" />
                             {t("actions.download")}
                           </DropdownMenuItem>
-                          <DropdownMenuItem>
-                            <Share2 className="h-4 w-4 mr-2" />
-                            {t("actions.share")}
+                          <DropdownMenuItem asChild>
+                            <ShareDocumentDialog
+                              documentName={doc.name}
+                              trigger={
+                                <button className="w-full flex items-center px-2 py-1.5">
+                                  <Share2 className="h-4 w-4 mr-2" />
+                                  {t("actions.share")}
+                                </button>
+                              }
+                            />
                           </DropdownMenuItem>
                           <DropdownMenuSeparator />
                           <DropdownMenuItem
