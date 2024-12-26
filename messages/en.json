@@ -150,6 +150,63 @@
             "revenue": "Monthly Revenue",
             "avgResponseTime": "Avg. Response Time",
             "successRate": "Success Rate"
+        },
+        "clients": {
+            "title": "Clients",
+            "subtitle": "Manage your client relationships",
+            "addClient": "Add Client",
+            "table": {
+                "client": "Client",
+                "contact": "Contact Info",
+                "status": "Status",
+                "lastContact": "Last Contact",
+                "cases": "Cases",
+                "actions": "Actions"
+            },
+            "status": {
+                "active": "Active",
+                "pending": "Pending",
+                "completed": "Completed"
+            },
+            "actions": {
+                "viewDetails": "View Details",
+                "sendMessage": "Send Message"
+            },
+            "form": {
+                "name": "Full Name",
+                "email": "Email Address",
+                "phone": "Phone Number",
+                "status": "Status",
+                "cancel": "Cancel",
+                "save": "Save Client"
+            },
+            "filters": {
+                "search": "Search clients...",
+                "status": "Filter by Status",
+                "allStatuses": "All Statuses"
+            },
+            "noClients": "No clients found 📝",
+            "addYourFirstClient": "Add your first client to get started",
+            "noSearchResults": "No matching clients found 🔍",
+            "tryAdjustingFilters": "Try adjusting your filters or search terms"
+        },
+        "clientDetails": {
+            "title": "Client Details",
+            "email": "Email Address",
+            "phone": "Phone Number",
+            "address": "Address",
+            "joinedDate": "Client Since",
+            "tabs": {
+                "cases": "Cases",
+                "notes": "Notes"
+            },
+            "caseHistory": "Case History",
+            "clientNotes": "Client Notes",
+            "status": {
+                "active": "Active",
+                "pending": "Pending",
+                "completed": "Completed"
+            }
         }
     }
 }
