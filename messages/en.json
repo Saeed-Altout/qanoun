@@ -75,7 +75,9 @@
         "home": "Home",
         "lawyers": "Lawyers",
         "firms": "Law Firms",
-        "blog": "Blog"
+        "blog": "Blog",
+        "dashboard": "Dashboard",
+        "login": "Login"
     },
     "Lawyers": {
         "title": "Find Lawyers",
@@ -111,5 +113,34 @@
             "apply": "Apply Filters"
         },
         "noResults": "No lawyers found matching your criteria"
+    },
+    "Dashboard": {
+        "header": {
+            "search": "Search...",
+            "admin": "Admin"
+        },
+        "sidebar": {
+            "dashboard": "Dashboard",
+            "clients": "Clients",
+            "calendar": "Calendar",
+            "documents": "Documents",
+            "messages": "Messages",
+            "settings": "Settings",
+            "help": "Help",
+            "logout": "Logout"
+        },
+        "calendar": {
+            "title": "March",
+            "addTask": "Add Task",
+            "weekDays": {
+                "sun": "Sun",
+                "mon": "Mon",
+                "tue": "Tue",
+                "wed": "Wed",
+                "thu": "Thu",
+                "fri": "Fri",
+                "sat": "Sat"
+            }
+        }
     }
 }

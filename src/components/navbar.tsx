@@ -1,82 +1,90 @@
 "use client";
 
-import { usePathname, useRouter, Link } from "@/i18n/routing";
-import { useLocale, useTranslations } from "next-intl";
-import { Button } from "./ui/button";
-import { motion } from "framer-motion";
-import { cn } from "@/lib/utils";
+import { useTranslations } from "next-intl";
+import { Logo } from "@/components/ui/logo";
+import { Button } from "@/components/ui/button";
+import { usePathname } from "next/navigation";
+import { Link } from "@/navigation";
 
 export function Navbar() {
   const t = useTranslations("Navbar");
   const pathname = usePathname();
-  const router = useRouter();
-  const locale = useLocale();
 
-  const handleLanguageChange = () => {
-    const nextLocale = locale === "en" ? "ar" : "en";
-    router.replace(pathname, { locale: nextLocale });
-  };
-
-  const navItems = [
-    { href: "/", label: t("home") },
-    { href: "/lawyers", label: t("lawyers") },
-    { href: "/firms", label: t("firms") },
-    { href: "/blog", label: t("blog") },
-  ];
+  // Check if user is logged in (you'll need to implement your auth logic)
+  const isLoggedIn = true; // Replace with actual auth check
 
   return (
-    <motion.nav
-      className="sticky top-0 z-50 border-b bg-white/80 backdrop-blur-sm"
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.3 }}
-    >
+    <nav className="bg-white border-b border-gray-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-16 items-center">
-          <Link href="/" className="flex-shrink-0 relative group">
-            <motion.h1
-              className="text-2xl font-bold text-[#B4975A] transition-colors duration-200"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              {t("title")}
-            </motion.h1>
-            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#B4975A] transition-all duration-200 group-hover:w-full" />
-          </Link>
-
-          <div className="hidden md:flex items-center justify-center flex-1 gap-8">
-            {navItems.map((item) => (
+        <div className="flex justify-between h-16">
+          <div className="flex">
+            <Link href="/" className="flex items-center">
+              <Logo className="h-8 w-auto" />
+            </Link>
+            <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
               <Link
-                key={item.href}
-                href={item.href}
-                className={cn(
-                  "relative group py-2 text-base transition-colors duration-200",
-                  pathname === item.href
-                    ? "text-[#B4975A] font-medium"
-                    : "text-gray-600 hover:text-[#B4975A]"
-                )}
+                href="/"
+                className={`inline-flex items-center px-1 pt-1 text-sm font-medium ${
+                  pathname === "/"
+                    ? "text-[#B4975A] border-b-2 border-[#B4975A]"
+                    : "text-gray-500 hover:text-[#B4975A]"
+                }`}
               >
-                {item.label}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#B4975A] transition-all duration-200 group-hover:w-full" />
+                {t("home")}
               </Link>
-            ))}
+              <Link
+                href="/lawyers"
+                className={`inline-flex items-center px-1 pt-1 text-sm font-medium ${
+                  pathname === "/lawyers"
+                    ? "text-[#B4975A] border-b-2 border-[#B4975A]"
+                    : "text-gray-500 hover:text-[#B4975A]"
+                }`}
+              >
+                {t("lawyers")}
+              </Link>
+              <Link
+                href="/firms"
+                className={`inline-flex items-center px-1 pt-1 text-sm font-medium ${
+                  pathname === "/firms"
+                    ? "text-[#B4975A] border-b-2 border-[#B4975A]"
+                    : "text-gray-500 hover:text-[#B4975A]"
+                }`}
+              >
+                {t("firms")}
+              </Link>
+              <Link
+                href="/blog"
+                className={`inline-flex items-center px-1 pt-1 text-sm font-medium ${
+                  pathname === "/blog"
+                    ? "text-[#B4975A] border-b-2 border-[#B4975A]"
+                    : "text-gray-500 hover:text-[#B4975A]"
+                }`}
+              >
+                {t("blog")}
+              </Link>
+            </div>
           </div>
-
-          <motion.div
-            className="flex items-center gap-4"
-            whileHover={{ scale: 1.02 }}
-          >
-            <Button
-              variant="outline"
-              size="sm"
-              onClick={handleLanguageChange}
-              className="border-[#B4975A] text-[#B4975A] hover:bg-[#B4975A] hover:text-white transition-all duration-200"
-            >
-              {locale === "en" ? "العربية" : "English"}
-            </Button>
-          </motion.div>
+          <div className="flex items-center">
+            {isLoggedIn ? (
+              <Link href="/dashboard">
+                <Button
+                  variant="outline"
+                  className="border-[#B4975A] text-[#B4975A] hover:bg-[#B4975A] hover:text-white"
+                >
+                  {t("dashboard")}
+                </Button>
+              </Link>
+            ) : (
+              <Button
+                variant="outline"
+                className="border-[#B4975A] text-[#B4975A] hover:bg-[#B4975A] hover:text-white"
+              >
+                {t("login")}
+              </Button>
+            )}
+          </div>
         </div>
       </div>
-    </motion.nav>
+    </nav>
   );
 }
