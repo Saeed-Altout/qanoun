@@ -4,9 +4,71 @@
         "subtitle": "24/7 Legal Consultations",
         "description": "Get professional legal consultation from the comfort of your home through our platform. Connect with experienced lawyers and find the answers you need for your legal matters. Convenient and confidential, just one click away.",
         "lawyerRegister": "Register as Lawyer",
-        "browseButton": "Browse Lawyers",
-        "categoriesTitle": "Categories",
-        "categoriesDescription": "Diverse groups of law branches or fields that encompass various areas of legal practice. These classifications help organize and categorize different aspects of the legal system and provide a framework for legal professionals to specialize in specific areas. Each legal classification deals with specific types of legal issues, laws, and regulations."
+        "browseButton": "Browse Lawyers"
+    },
+    "Services": {
+        "title": "Our Services",
+        "description": "Comprehensive legal services tailored to meet your needs",
+        "legalConsultation": "Legal Consultation",
+        "legalConsultationDesc": "Get expert legal advice from experienced professionals",
+        "expertLawyers": "Expert Lawyers",
+        "expertLawyersDesc": "Connect with qualified lawyers specializing in various fields",
+        "caseManagement": "Case Management",
+        "caseManagementDesc": "Efficient handling and tracking of your legal cases",
+        "clientProtection": "Client Protection",
+        "clientProtectionDesc": "Ensuring your rights and interests are protected"
+    },
+    "Testimonials": {
+        "title": "What Our Clients Say",
+        "description": "Read about the experiences of those who have used our platform",
+        "testimonial1": "The consultation process was smooth and professional. I got the legal advice I needed quickly.",
+        "name1": "Ahmed Hassan",
+        "position1": "Business Owner",
+        "testimonial2": "Found the perfect lawyer for my case through this platform. Highly recommended!",
+        "name2": "Sarah Johnson",
+        "position2": "Client",
+        "testimonial3": "Excellent service and follow-up. The platform made legal consultation accessible.",
+        "name3": "Mohammed Ali",
+        "position3": "Entrepreneur"
+    },
+    "CTA": {
+        "title": "Join Our Legal Network",
+        "description": "Become part of our growing community of legal professionals",
+        "button": "Register Now"
+    },
+    "Contact": {
+        "title": "Get in Touch",
+        "description": "Have questions? We're here to help",
+        "namePlaceholder": "Your Name",
+        "emailPlaceholder": "Your Email",
+        "subjectPlaceholder": "Subject",
+        "messagePlaceholder": "Your Message",
+        "submitButton": "Send Message"
+    },
+    "Footer": {
+        "about": {
+            "title": "About Us",
+            "description": "We connect clients with expert legal professionals for reliable consultations and services."
+        },
+        "quickLinks": {
+            "title": "Quick Links",
+            "home": "Home",
+            "lawyers": "Find Lawyers",
+            "firms": "Law Firms"
+        },
+        "services": {
+            "title": "Services",
+            "consultation": "Legal Consultation",
+            "caseManagement": "Case Management",
+            "legalAdvice": "Legal Advice"
+        },
+        "contact": {
+            "title": "Contact",
+            "address": "123 Legal Street, City",
+            "email": "contact@qanoon.com",
+            "phone": "+1 234 567 890"
+        },
+        "copyright": "Qanoon. All rights reserved."
     },
     "Navbar": {
         "title": "Qanoon",
