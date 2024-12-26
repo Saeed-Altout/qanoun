@@ -114,6 +114,7 @@
         "noResults": "لم يتم العثور على محامين يطابقون معايير البحث"
     },
     "Dashboard": {
+        "welcome": "مرحباً بعودتك، حسن",
         "header": {
             "search": "بحث...",
             "admin": "مدير"
@@ -140,6 +141,14 @@
                 "fri": "الجمعة",
                 "sat": "السبت"
             }
+        },
+        "stats": {
+            "totalClients": "إجمالي العملاء",
+            "activeConsultations": "الاستشارات النشطة",
+            "upcomingMeetings": "الاجتماعات القادمة",
+            "revenue": "الإيرادات الشهرية",
+            "avgResponseTime": "متوسط وقت الرد",
+            "successRate": "معدل النجاح"
         }
     }
 }
